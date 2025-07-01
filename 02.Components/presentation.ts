@@ -39,3 +39,45 @@
 // -Standalone components are promoted by Angular 18 as default approach
 //  -Simplifies architecture
 //  -Enhances modularity
+// -Components can exist independently without being tied to a module
+//  -Makes application more performant, due to improved tree-shaking (removal of unused code)
+//  -This is especially useful for small, isolated components or when you want to lazy load components without the need for a full module. 
+
+
+//Creating Components
+//And Their Unique Templates
+
+//Creating Components Manually
+
+// -To create a component, we need the Component decorator
+// import { Component } from '@angular/core'; 
+// -It provides metadata and tells Angular that we are creating a Component and not an ordinary class
+
+// @Component({ //We call it whilist adding '@' in front and pass in metadata
+//     selector: 'app-home',
+//     template: '<h1>Home View</h1>',
+//     standalone: true
+// })
+
+// -Component Metadata
+//  -selector
+//   -The component's HTML selector
+//   selector: 'app-home'
+//  -standalone
+//   -Declares the component as standalone
+//   standalone: true
+// -Component Metadata
+//  -template or templateURL
+//   -The component's template
+//   templateUrl: 'Path to template'
+// styles or styleUrls
+//  -Unique styles for the current component
+// styleUrls: 'Array of paths"
+
+//Creating Components with the CLI
+// -We can use the Anglular CLI to generate a new component
+// ng generate component home 
+// The CLI will create the necessary folder structure under src/app/home/
+//When using the CLI, it automatically imports the generated component into the relevant module or keeps it as standalone
+
+
