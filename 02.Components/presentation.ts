@@ -81,3 +81,19 @@
 //When using the CLI, it automatically imports the generated component into the relevant module or keeps it as standalone
 
 
+//Bootstrapping
+//Starting the Application
+
+//Bootstrapping an Application
+// -Involves initializing the Angular application by specifying the root component that serves as the entry point
+// -Angular supports bootstrapping with standalone components, meaning an NgModule is no longer required for the root component
+// -Bootstrapping process ensures that the specified root component is rendered in th index.html file, where it replaces the element matching the root component's selector (e.g. <app-root>)
+
+//The Initial Module
+// -The bootstrapApplication method from the @angular/platform-browser package is used to bootstrap standalone components directly
+// -Example main.ts
+// import { bootstrapApplication } from '@angular/platform-browser';
+// import { AppComponent } from './app/app.component';
+// bootstrapApplication(AppComponent)
+// ./catch((err) => console.error(err));
+
