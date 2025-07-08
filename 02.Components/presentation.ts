@@ -95,5 +95,52 @@
 // import { bootstrapApplication } from '@angular/platform-browser';
 // import { AppComponent } from './app/app.component';
 // bootstrapApplication(AppComponent)
-// ./catch((err) => console.error(err));
+// .catch((err) => console.error(err));
 
+
+// Data Bindings & Templates
+// Repeater, Enhanced Syntax
+
+//Templates & Data Bindings Overview
+// -A template is a form of HTML that tells Angular how to render the component
+//  -render array properties using @for repeater
+//  -render nested properties of an object
+//  -condition statements using @if
+//  -attach events and handle them in the component
+// -They can be both inline or in a separate file
+
+
+//Render an Array Using @for
+// export class GamesComponent {
+//     games : Game[];
+//     constructor() {
+//         this.games = [ //Array of Games ]
+//     }
+// }
+
+// <h1>Games List</h1>
+//     <p>Pick a game to Buy</p>
+// <ul>
+// @for (game of games; track game){
+//     <li> {{game.title}} </li>
+// }
+// </ul> 
+
+// Conditional Statements Using @if and @else
+
+// <h1>Games List</h1>
+// <p>Pick a game to Buy</p>
+// <ul>
+// @for(game of games; track game) {
+//     <li>
+//     <div>
+//         {{ game.title }}
+//     </div>
+//     @if (game.price >= 100) {
+//         <span>Price: {{ game.price }} - Expensive</span>
+//     }@else if (game.price >= 50) {
+//         <span>Price: {{ game.price }} - Moderate</span>
+//     }@else {
+//         <span>Price: {{ game.price }} - Cheap</span> </li>}
+//         </ul>
+//     }
