@@ -24,4 +24,14 @@ export class ArticleComponent{
     this.articleDescLen = 0;
     this.descToShow = "";
   }
+  readMore(){
+    this.articleDescLen+=this.symbols;
+    if(this.articleDescLen >= this.articleDesc.length){
+      this.showReadMoreBtn = false;
+      this.showHideBtn = true;
+    }
+    if(this.articleDescLen < this.articleDesc.length){
+      this.descToShow = this.articleDesc.substring(0, this.articleDescLen);
+    }
+  }
 }
