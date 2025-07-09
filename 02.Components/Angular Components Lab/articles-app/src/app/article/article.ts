@@ -24,7 +24,7 @@ export class ArticleComponent{
     this.articleDescLen = 0;
     this.descToShow = "";
   }
-  readMore(){
+  readMore():void{
     this.articleDescLen+=this.symbols;
     if(this.articleDescLen >= this.articleDesc.length){
       this.showReadMoreBtn = false;
@@ -33,5 +33,9 @@ export class ArticleComponent{
     if(this.articleDescLen < this.articleDesc.length){
       this.descToShow = this.articleDesc.substring(0, this.articleDescLen);
     }
+  }
+  toggleImage():void{
+    this.imageIsShown = !this.imageIsShown;
+    this.imageButtonTitle = this.imageButtonTitle === "Show Image" ? "Hide Image" : "Show Image";
   }
 }
