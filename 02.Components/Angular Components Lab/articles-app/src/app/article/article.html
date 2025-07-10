@@ -11,6 +11,6 @@
     <div class="desc">{{descToShow}}</div>
   }
   @if(imageIsShown) {
-    <img src="article.imageUrl" alt="article image" />
+    <img [src]="article?.imageURL" alt="article image" />
   }
 </li>
