@@ -144,3 +144,136 @@
 //         <span>Price: {{ game.price }} - Cheap</span> </li>}
 //         </ul>
 //     }
+
+//Attach Events
+// <button (click)="showContent($event)">Show content</button>
+
+// export class GamesComponent {
+//     public games: Game[];
+//     showContent: boolean;
+
+//     constructor(){
+//         this.games = [ ]// Array of games
+//     }
+
+//     showAdditionalContent($event) {
+//         this.showContent = true; 
+//     }
+// }
+
+//Binding Attributes
+// -Binding attributes
+// export class GamesComponent {
+//     imgUrl: string;
+//     constructor() {
+//         this.imagUrl = "a url to an image"
+//     }    
+// }
+
+// <img [attr.src]="imgUrl" />
+//The name of the property in the component
+
+//Binding CSS Classes or Specific Class Name
+// -Binding classes
+// div [class]="badCurly">Bad curly</div>
+// -You can bind to a specific class name
+// <div [class.special]="isSpecial">
+// The class binding is special
+// </div>
+// <div class="special"[class.special]="!isSoecial">
+// This one is not so special
+// </div>
+
+//Binding Styles or Styles with Units
+
+// -Binding styles
+// <button [style.color]="isSpecial" ? 'red': 'green'">Red</button>
+// <button [style.background-color]="canSave ? 'cyan': 'grey'" >
+// Save
+// </button>
+
+// -Or styles with units
+// <button [style.font-size.em]="isSpecial ? 3 : 1">
+// Big
+// </button> 
+// <button [style.font-size.%]="!isSpecial ? 150: 50">
+// Small
+// </button>
+
+//Reference and Null-safe Operator
+//-Reference other elements
+// <input #phone placeholder="phone number">
+// <button (click)="callPhone(phone.value)">Call</Button>
+//-You can also use the null-safe operator
+// <div>The current hero's name is {{game?.title}}</div>
+// <div>The null hero's name is {{game && game.name}}</div>
+
+//Template Expressions
+//-The text between the curly brackets is evaluated to a string
+// <p>The sum of two + two + four is {{2 + 2 + 4}}</p>
+//-Template expressions are not pure JavaScript
+//-You cannot use these:
+// -Assignments(=,+=,-=,...)
+// -The new operator
+// -Multiple expressions
+// -Increment or decrement operations (++ or --)
+// -Bitwise operators
+
+//Types of Data Binding
+
+//-There are three types of data binding
+
+// -From data-source to view
+// {{expression}}
+// [target]="expression"
+// bind-target="expression"
+
+// -From view to data-source
+// (target)="statement"
+// on-target="statement"
+
+// -Two-way
+// [(ngModel)]="expression"
+// bindon-target="expression" //FormsModule needed
+
+
+//Lifecycle Hooks
+//Intersect Through the Loop
+
+//Lifecycle Overview
+// -A component has a lifecycle managed by Angular
+// -Angular offers lifecycle hooks that provide control over life moments of a component
+// -Directive and component instances have a lifecycle as Angular creates, updates destroys them
+
+//NgOnInit and NgOnDestroy Example
+
+// import { Component, OnInit, OnDestroy } from '@angular/core';
+// @Component({..})
+// export class GamesComponent implements OnInit, OnDestroy {
+//     games: Game[];
+
+//     ngOnInit() {
+//         console.log('CREATED'); //Called shortly after creation
+//     }
+
+//     ngOnDestroy() {
+//         console.log('DELETED'); //Used for cleanup
+//     }
+// }
+
+//Other Lifecycle Hooks
+//-ngOnChanges()
+// -When data is changed
+//-ngDoCheck()
+// -Detect your own changes
+//-ngAfterCotnentInit()
+// -When external content is received
+
+//Other Lifecycle Hooks
+//All lifecycle hooks
+//-ngAfterContentChecked()
+// -When external content is checked
+//-ngAfterViewInit()
+// -Whent the views and child views are created
+//-ngAfterViewChecked()
+// -When the above are checked
