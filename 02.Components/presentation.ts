@@ -277,3 +277,69 @@
 // -Whent the views and child views are created
 //-ngAfterViewChecked()
 // -When the above are checked
+
+
+//Component Interaction
+//Passing Data in Between
+
+//From Parent to Child
+// import { Component, Input } from '@angular/core';
+// import { Game } from '../games/game';
+// @Component({
+//     selector: 'game',
+//     template: `
+//     <li><div> {{ game.title | uppercase }}
+//     @if (game.price >= 100) {
+//     <span>-> Price: {{ game.price }}</span>
+//     }</div>
+//     </li>`})
+// export class GamesComponent {
+//     @Input('gameProp') game: Game; //The prop will come from parent
+// }
+
+// <h1>Games List</h1>
+// <p>Pick a game to Buy</p>
+// <ul>
+// <game @for=game of games; track game [gameProp]="game">
+// </game>
+// </ul>
+// <button (click)="showAdditionalContent()">Show Image</button> //Render the child into the parent template and pass the needed prop 
+
+//Component Interaction
+//-In order to pass data from child to parent compnent we neeed the Output decorator and an EventEmitter
+
+// import { Output, EventEmitter } from '@angular/core';
+// export class GameComponent {
+//     @Input('gameProp') game: GameComponent;
+//     @Output() onReacted = new EventEmitter<boolean>();
+
+//     react(isLiked : boolean) {
+//         this.onReacted.emit(isLiked); //The parent will receive the event; 
+//     }
+// }
+
+//Component Interaction
+// The Parent component handles the event
+
+//Component Interaction
+//-The Parent component handles the event
+// <game @for="game of games" [gameProp]="game"
+// (onReacted)="onReacted($event)"></game>
+
+// export class GamesComponent {
+//     games: Game[];
+//     likes: number;
+//     dislikes: number;
+//     onReacted(isLiked: boolean) {
+//         isLiked? this.likes++ : this.dislikes++; 
+//     }
+// }
+
+//Summary
+//-Each component has its own template
+//-there are three types of data binding
+//-We can intersect the lifestyle of a component
+// ngOnInit() { this.data = //Retrieve data}
+//-Components can interact with each other
+//@Output() fromChild = new EventEmitter<boolean>();
+//-Signals is a system that granularly tracks how and where your state is used throughout an application
